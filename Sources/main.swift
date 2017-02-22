@@ -22,7 +22,7 @@ func main() {
 //        print("\(window) is focused = \(value) -- \(window.isFocused)")
 //    }
     
-    print(glfw.Monitor.primary.physicalSize)
+    print(glfw.Monitor.primary.videoModes)
     
     window!.callbacks.focus { window, bool in
 //        print("a - \(bool)")
