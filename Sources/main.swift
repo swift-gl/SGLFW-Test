@@ -22,17 +22,25 @@ func main() {
 //        print("\(window) is focused = \(value) -- \(window.isFocused)")
 //    }
     
+    print(glfw.Monitor.primary.physicalSize)
+    
     window!.callbacks.focus { window, bool in
 //        print("a - \(bool)")
 //        print(window.frame)
 //        print(size)
         }.size { window, size in
             print("\(size)")
-
         }.minimize { window, minimized in
             print("minimize - \(minimized)")
             
+        }.cursorPosition { window, position in
+//            print("cursor = \(position)")
+        }.cursorEnter { window, enter in
+            print("enter = \(enter)")
+            
     }
+    
+    window!.set(cursor: glfw.Cursor(standart: .hand))
     
 //    window?.callbacks.closed(nil)
     while !window!.shouldClose {
